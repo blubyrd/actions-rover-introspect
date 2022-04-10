@@ -1,0 +1,22 @@
+name: 'Apollo Rover Introspect Action'
+description: 'introspect an Apollo server'
+inputs:
+  federated:
+    description: 'true when interacting directly with a federated subgraph'
+    required: false
+    default: false
+  subgraph:
+    description: 'subgraph name'
+    required: false
+  server:
+    description: 'apollo server url'
+    required: true
+  headers:
+    description: 'headers to include in introspection request, as JSON'
+    required: false
+outputs:
+  schema:
+    description: 'base64 encoded fetched SDL'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
